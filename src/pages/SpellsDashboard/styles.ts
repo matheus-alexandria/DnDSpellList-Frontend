@@ -20,9 +20,31 @@ export const HeaderContent = styled.div`
   }
 
   h1 {
-    color: #d6972d;
+    color: #d6975e;
     font-family: 'Mina', sans-serif;
     font-weight: bold;
     font-size: 60px;
+  }
+`;
+
+export const HeaderOptions = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-itens: center;
+  padding-right: 20px;
+
+  text {
+    color: #d6975e;
+    margin: 0 10px 0 10px;
+    font-family: 'Mina', sans-serif;
+    font-size: 26px;
+  }
+
+  button {
+    background-color: transparent;
+    color: #d6975e;
+    border: none;
+    font-family: 'Mina', sans-serif;
+    font-size: 26px;
   }
 `;
