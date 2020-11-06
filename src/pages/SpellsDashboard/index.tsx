@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ImgPotion from '../../assets/potion.png';
+import ImgPotion from '../../assets/potion2.png';
 
 import { Container, Header, HeaderContent, HeaderOptions } from './styles';
 
