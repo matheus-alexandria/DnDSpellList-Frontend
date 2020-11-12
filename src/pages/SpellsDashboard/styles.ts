@@ -127,5 +127,59 @@ export const OptionsBook = styled.div`
 
   img {
     width: 100px;
+    opacity: 0.7;
+    transition: 0.6s;
+
+    &:hover {
+      opacity: 1;
+      transition: 0.6s;
+    }
   }
+`;
+
+export const Spells = styled.div`
+  background-color: #212330;
+  padding-bottom: 30px;
+`;
+
+export const SpellDivision = styled.div`
+  display: flex;
+  background-color: #558266;
+  height: 8px;
+`;
+
+export const SpellsHeader = styled.div`
+  display: flex;
+  align-items: center;
+  background-color: #212330;
+  margin-top: 9px;
+  border-top: #558266 solid 8px;
+  border-bottom: #558266 solid 8px;
+
+  h1 {
+    color: #d6975e;
+    font-family: 'Mina', sans-serif;
+    font-weight: bold;
+    font-size: 60px;
+    margin-left: 40px;
+  }
+`;
+
+export const SpellChart = styled.div`
+  display: flex;
+  align-items: center;
+  background-color: #c4c4c4;
+  margin: 20px;
+  padding: 10px;
+
+  div {
+    background-color: blue;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+`;
+
+export const SpellTitle = styled.div`
+  display: flex;
 `;

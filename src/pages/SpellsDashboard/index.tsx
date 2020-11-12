@@ -13,6 +13,11 @@ import {
   Dashboard,
   IntroductionChart,
   OptionsBook,
+  SpellDivision,
+  Spells,
+  SpellsHeader,
+  SpellChart,
+  SpellTitle,
 } from './styles';
 
 const SpellsDashboard: React.FC = () => {
@@ -57,6 +62,38 @@ const SpellsDashboard: React.FC = () => {
           </p>
         </IntroductionChart>
       </Dashboard>
+
+      <Spells>
+        <SpellDivision />
+
+        <SpellsHeader>
+          <h1>SPELLS</h1>
+        </SpellsHeader>
+
+        <SpellChart>
+          <div />
+          <SpellTitle>
+            <strong>Nome Spell</strong>
+            <p>5th Level (V, S, M)</p>
+          </SpellTitle>
+        </SpellChart>
+
+        <SpellChart>
+          <div />
+          <SpellTitle>
+            <strong>Nome Spell</strong>
+            <p>5th Level (V, S, M)</p>
+          </SpellTitle>
+        </SpellChart>
+
+        <SpellChart>
+          <div />
+          <SpellTitle>
+            <strong>Nome Spell</strong>
+            <p>5th Level (V, S, M)</p>
+          </SpellTitle>
+        </SpellChart>
+      </Spells>
 
       <OptionsBook>
         <img src={ImgBook} alt="Um livro como imagem de um menu" />
