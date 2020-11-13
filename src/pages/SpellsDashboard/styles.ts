@@ -35,7 +35,7 @@ export const HeaderOptions = styled.div`
   justify-content: flex-end;
   margin-right: 30px;
 
-  text {
+  p {
     color: #d6975e;
     margin: 0 10px 0 10px;
     font-family: 'Mina', sans-serif;
@@ -170,16 +170,40 @@ export const SpellChart = styled.div`
   align-items: center;
   background-color: #c4c4c4;
   margin: 20px;
-  padding: 10px;
+  padding: 14px;
+  border-radius: 6px;
 
-  div {
+  img {
     background-color: blue;
-    width: 20px;
-    height: 20px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
+  }
+
+  svg {
+    margin-left: auto;
+    color: #d6972d;
+    width: 28px;
+    height: 28px;
   }
 `;
 
 export const SpellTitle = styled.div`
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+
+  strong {
+    color: #d6972d;
+    font-family: 'Mina', sans-serif;
+    font-size: 20px;
+  }
+
+  p {
+    color: #99650d;
+    font-family: 'Mina', sans-serif;
+    font-size: 16px;
+    line-height: 13px;
+  }
 `;

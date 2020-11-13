@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
+import { FiPlus } from 'react-icons/fi';
 import ImgPotion from '../../assets/potion2.png';
 import ImgBackground from '../../assets/shadowfell.png';
 import ImgBook from '../../assets/book.png';
+
+import api from '../../services/api';
 
 import {
   Container,
@@ -20,7 +23,39 @@ import {
   SpellTitle,
 } from './styles';
 
+interface Spell {
+  id: string;
+  name: string;
+  level: number;
+  type: string;
+  castTime: string;
+  range: string;
+  components: string;
+  duration: string;
+  class: string;
+  description: string;
+  extra?: string;
+}
+
 const SpellsDashboard: React.FC = () => {
+  const [spells, setSpells] = useState<Spell[]>([]);
+
+  useEffect(() => {
+    async function loadSpells(): Promise<void> {
+      const response = await api.get('/spells/', {
+        params: {
+          level: 0,
+          type: 'Conjuration',
+          classe: 'Wizard',
+        },
+      });
+
+      setSpells(response.data);
+    }
+
+    loadSpells();
+  }, [spells]);
+
   return (
     <Container>
       <Header>
@@ -32,7 +67,7 @@ const SpellsDashboard: React.FC = () => {
 
         <HeaderOptions>
           <button type="button">ble ble ble</button>
-          <text>|</text>
+          <p>|</p>
           <button type="button">bla bla bla</button>
         </HeaderOptions>
       </Header>
@@ -70,29 +105,22 @@ const SpellsDashboard: React.FC = () => {
           <h1>SPELLS</h1>
         </SpellsHeader>
 
-        <SpellChart>
-          <div />
-          <SpellTitle>
-            <strong>Nome Spell</strong>
-            <p>5th Level (V, S, M)</p>
-          </SpellTitle>
-        </SpellChart>
-
-        <SpellChart>
-          <div />
-          <SpellTitle>
-            <strong>Nome Spell</strong>
-            <p>5th Level (V, S, M)</p>
-          </SpellTitle>
-        </SpellChart>
-
-        <SpellChart>
-          <div />
-          <SpellTitle>
-            <strong>Nome Spell</strong>
-            <p>5th Level (V, S, M)</p>
-          </SpellTitle>
-        </SpellChart>
+        {spells.map(spell => (
+          <SpellChart key={spell.id}>
+            <img src={ImgBackground} alt="Spell mini" />
+            <SpellTitle>
+              <strong>{spell.name}</strong>
+              {spell.level === 0 ? (
+                <p>Cantrip ({spell.components})</p>
+              ) : (
+                <p>
+                  {spell.level}ht level ({spell.components})
+                </p>
+              )}
+            </SpellTitle>
+            <FiPlus />
+          </SpellChart>
+        ))}
       </Spells>
 
       <OptionsBook>
